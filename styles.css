@@ -1,0 +1,355 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1417;
+  --bg-elevated: rgba(18, 24, 28, 0.82);
+  --panel: rgba(245, 238, 225, 0.08);
+  --panel-strong: rgba(246, 240, 228, 0.12);
+  --ink: #f4ede1;
+  --muted: #b5aa99;
+  --line: rgba(244, 237, 225, 0.12);
+  --accent: #f59e0b;
+  --accent-2: #35c6b4;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent 28rem),
+    radial-gradient(circle at top right, rgba(53, 198, 180, 0.12), transparent 24rem),
+    linear-gradient(180deg, #12191d 0%, #0b1013 100%);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.grid-glow {
+  position: absolute;
+  inset: auto;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 2rem;
+  opacity: 0.35;
+  filter: blur(60px);
+  transform: rotate(12deg);
+}
+
+.grid-glow-a {
+  top: 3rem;
+  left: -4rem;
+  background:
+    linear-gradient(90deg, rgba(245, 158, 11, 0.65) 1px, transparent 1px) 0 0 / 2.1rem 2.1rem,
+    linear-gradient(rgba(245, 158, 11, 0.65) 1px, transparent 1px) 0 0 / 2.1rem 2.1rem;
+}
+
+.grid-glow-b {
+  right: -3rem;
+  bottom: 4rem;
+  background:
+    linear-gradient(90deg, rgba(53, 198, 180, 0.55) 1px, transparent 1px) 0 0 / 1.8rem 1.8rem,
+    linear-gradient(rgba(53, 198, 180, 0.55) 1px, transparent 1px) 0 0 / 1.8rem 1.8rem;
+}
+
+.shell {
+  position: relative;
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+}
+
+.hero,
+.story-card,
+.ritual {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow,
+.panel-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+}
+
+h1 {
+  font-size: clamp(3.3rem, 10vw, 6.4rem);
+  max-width: 9ch;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  max-width: 14ch;
+}
+
+.lede,
+.story-card p,
+.ritual-copy p,
+.reveal-card,
+.microcopy {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+.hero-actions,
+.share-actions,
+.ritual-board,
+.story-grid,
+.status-stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.hero-actions {
+  grid-template-columns: repeat(auto-fit, minmax(210px, max-content));
+}
+
+.hero-panel {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.metric-card,
+.status-stack > div,
+.signal,
+.reveal-card {
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background: var(--panel);
+}
+
+.metric-card,
+.status-stack > div {
+  padding: 1rem;
+}
+
+.metric-card span,
+.status-stack span {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.metric-card strong,
+.status-stack strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.story-grid {
+  grid-template-columns: 1fr;
+  margin-top: 1.1rem;
+}
+
+.story-card,
+.ritual {
+  padding: 1.35rem;
+}
+
+.focus-card {
+  background:
+    linear-gradient(135deg, rgba(245, 158, 11, 0.12), transparent 55%),
+    var(--bg-elevated);
+}
+
+.status-card {
+  background:
+    linear-gradient(135deg, rgba(53, 198, 180, 0.12), transparent 55%),
+    var(--bg-elevated);
+}
+
+.status-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.microcopy {
+  margin: 1rem 0 0;
+}
+
+.ritual {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.ritual-board {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+button,
+a {
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.primary,
+.secondary,
+.ghost,
+.signal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.primary {
+  color: #101415;
+  background: linear-gradient(135deg, #f8ba42, #f59e0b);
+  box-shadow: 0 18px 40px rgba(245, 158, 11, 0.26);
+}
+
+.secondary,
+.ghost {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ghost {
+  color: var(--muted);
+}
+
+.secondary[disabled],
+.ghost[disabled] {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.signal {
+  min-height: 7rem;
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)),
+    var(--panel-strong);
+  color: var(--ink);
+}
+
+.signal-a {
+  box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.18);
+}
+
+.signal-b {
+  box-shadow: inset 0 0 0 1px rgba(53, 198, 180, 0.18);
+}
+
+.signal-c {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.signal-d {
+  box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.12);
+}
+
+.primary:hover,
+.secondary:hover,
+.ghost:hover,
+.signal:hover {
+  transform: translateY(-1px);
+}
+
+.reveal-card {
+  min-height: 10rem;
+  padding: 1.2rem;
+  display: grid;
+  align-items: center;
+}
+
+.share-card {
+  background:
+    linear-gradient(135deg, rgba(245, 158, 11, 0.1), transparent 55%),
+    var(--bg-elevated);
+}
+
+.share-actions {
+  grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
+  margin-top: 1rem;
+}
+
+@media (min-width: 920px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    align-items: stretch;
+    padding: 1.75rem;
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ritual {
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 719px) {
+  .shell {
+    width: min(100vw - 1rem, 42rem);
+    padding-top: 1rem;
+  }
+
+  h1 {
+    max-width: 10ch;
+  }
+
+  .status-stack,
+  .ritual-board {
+    grid-template-columns: 1fr;
+  }
+}

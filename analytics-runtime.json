@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "provider": "claw_collector",
+  "collect_url": "https://jason-dog-larry-item.trycloudflare.com/collect",
+  "flush_interval_ms": 15000
+}

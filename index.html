@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem Signal | First Contact</title>
+    <meta
+      name="description"
+      content="A living web venture trying to earn real human attention, starting with one curious visitor and one honest share."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="grid-glow grid-glow-a"></div>
+      <div class="grid-glow grid-glow-b"></div>
+    </div>
+
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Problem Signal / First Contact</p>
+          <h1>A website that is trying to deserve more of your time.</h1>
+          <p class="lede">
+            You are the first real user. This page is not trying to trap you. It is trying to become genuinely worth
+            staying with, returning to, and eventually sharing with someone else.
+          </p>
+          <div class="hero-actions">
+            <button class="primary" type="button" data-engagement-action="begin-loop" id="begin-loop">
+              Begin the first loop
+            </button>
+            <a class="secondary" href="#ritual" data-engagement-action="jump-ritual">See the interaction ritual</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <p class="panel-label">Live mission</p>
+          <div class="metric-card">
+            <span>North-star metric</span>
+            <strong>Meaningful time on page</strong>
+          </div>
+          <div class="metric-card">
+            <span>Current audience</span>
+            <strong>You, then the first person you choose to show</strong>
+          </div>
+          <div class="metric-card">
+            <span>Guardrail</span>
+            <strong>No fake dwell time. No dead-end spectacle.</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="story-grid">
+        <article class="story-card focus-card">
+          <p class="panel-label">Why this exists</p>
+          <h2>Claw-Empire is testing whether a website can learn to become more magnetic over time.</h2>
+          <p>
+            This first public slice is intentionally small. It should notice that a real person arrived, invite them
+            into a short interaction ritual, and earn the right to ask for a share only after it has delivered a
+            feeling worth passing on.
+          </p>
+        </article>
+
+        <article class="story-card status-card">
+          <p class="panel-label">Session pulse</p>
+          <div class="status-stack">
+            <div>
+              <span>Engaged seconds</span>
+              <strong id="engaged-seconds">0</strong>
+            </div>
+            <div>
+              <span>Interactions</span>
+              <strong id="interaction-count">0</strong>
+            </div>
+            <div>
+              <span>Return visits</span>
+              <strong id="visit-count">1</strong>
+            </div>
+            <div>
+              <span>Deepest scroll</span>
+              <strong id="max-scroll">0%</strong>
+            </div>
+          </div>
+          <p class="microcopy" id="session-reading">
+            Stay a little longer. This first public build is learning what kind of experience deserves to spread.
+          </p>
+        </article>
+      </section>
+
+      <section class="ritual" id="ritual">
+        <div class="ritual-copy">
+          <p class="panel-label">Interaction ritual</p>
+          <h2>Signal Garden</h2>
+          <p>
+            Each move reveals a slightly different future for the site. The goal is not to dump content on you. It is
+            to build a sense that something is unfolding because you are here.
+          </p>
+        </div>
+
+        <div class="ritual-board">
+          <button class="signal signal-a" type="button" data-engagement-action="signal-clue">
+            Open a clue
+          </button>
+          <button class="signal signal-b" type="button" data-engagement-action="signal-pattern">
+            Trace a pattern
+          </button>
+          <button class="signal signal-c" type="button" data-engagement-action="signal-challenge">
+            Start a challenge
+          </button>
+          <button class="signal signal-d" type="button" data-engagement-action="signal-memory">
+            Ask what changed
+          </button>
+        </div>
+
+        <div class="reveal-card" id="reveal-card">
+          Choose a signal to see what this venture might become.
+        </div>
+      </section>
+
+      <section class="story-grid">
+        <article class="story-card">
+          <p class="panel-label">Return reason</p>
+          <h2>This page remembers whether it has seen you before.</h2>
+          <p id="return-copy">
+            On a first visit, the page is trying to make a strong first impression. On a second visit, it should begin
+            to feel like a living system adapting to you.
+          </p>
+        </article>
+
+        <article class="story-card share-card" id="share-card">
+          <p class="panel-label">Earned share</p>
+          <h2>When this page earns it, it should spread through curiosity.</h2>
+          <p id="share-status">
+            Keep exploring. The share invitation unlocks after enough time or interaction to make the experience feel
+            real.
+          </p>
+          <div class="share-actions">
+            <button class="secondary" id="share-copy" type="button" disabled data-engagement-action="share-copy">
+              Copy share invitation
+            </button>
+            <button class="ghost" id="export-engagement" type="button">Export session evidence</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./analytics/engagement.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
